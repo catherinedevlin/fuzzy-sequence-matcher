@@ -33,12 +33,11 @@ setup(
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='fuzzy_sequence_matcher',
     name='fuzzy_sequence_matcher',
     packages=find_packages(include=['fuzzy_sequence_matcher', 'fuzzy_sequence_matcher.*']),
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/catherinedevlin/fuzzy_sequence_matcher',
     version='0.1.0',
-    zip_safe=False,
+    zip_safe=True,
 )

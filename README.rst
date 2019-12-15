@@ -28,6 +28,8 @@ where Y is a garbled or mutated copy of X.
 Example
 -------
 
+::
+
     >>> from fuzzy_sequence_matcher.fuzzy_sequence_matcher import best_matches
     >>> from jellyfish import jaro_distance
     >>> declaration = "We hold these truths to be self evident".split()
@@ -46,15 +48,14 @@ Scoring function
 ================
 
 The matching is done with a scoring function you specify.
-It should look something like 
+It should look something like::
 
     def score(element_from_seq1: Any, element_from_seq2: Any) -> float 
 
 with high scores indicating better matches.
 
-For comparing strings, you might use 
-[jellyfish](https://github.com/jamesturk/jellyfish).jaro_distance.
-For comparing numbers, `-abs(n1 - n2)` works.
+For comparing strings, you might use jellyfish_.jaro_distance.
+For comparing numbers, ``-abs(n1 - n2)`` works.
 
 threshold
 ==========
@@ -66,7 +67,7 @@ combinations grows impractically large to try them all.  The
 [itertools documenation](https://docs.python.org/3/library/itertools.html#itertools.combinations)
 gives the number of combinations as 
 
-    len(Y)! / len(X)! / (len(Y) - len(X)! 
+    len(Y)! / len(X)! / (len(Y) - len(X))! 
 
 when len(Y) >= len(X).
 
@@ -95,3 +96,4 @@ Thanks to `Dayton Dynamic Languages`_ for advice and brainstorming
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 .. _`Dayton Dynamic Languages`: http://d8ndl.org/
+.. _jellyfish: https://github.com/jamesturk/jellyfish
